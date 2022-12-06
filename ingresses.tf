@@ -25,4 +25,8 @@ resource "kubernetes_ingress" "alb_ingress" {
       }
     }
   }
+  
+  depends_on = [
+    helm_release.nginx_ingress_controller
+  ]
 }
