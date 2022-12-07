@@ -18,6 +18,12 @@ resource "helm_release" "nginx_ingress_controller" {
   }
 
   set {
+    name  = "config.proxy-buffer-size"
+    value = "16k"
+    type  = "string"
+  }
+
+  set {
     name  = "service.type"
     value = "NodePort"
     type  = "string"
