@@ -5,6 +5,7 @@ ALB-Controller should be already installed in order to configure the alb-ingress
 
 https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.2/guide/ingress/annotations/
 ```
+alb.ingress.kubernetes.io/load-balancer-name: lbname
 alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:xxxx
 alb.ingress.kubernetes.io/healthcheck-path: /healthz
 alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
