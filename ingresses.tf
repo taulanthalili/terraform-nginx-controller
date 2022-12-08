@@ -11,7 +11,7 @@ resource "kubernetes_ingress_v1" "alb_ingress" {
       "alb.ingress.kubernetes.io/scheme"           = "internet-facing"
       "alb.ingress.kubernetes.io/target-type"      = "ip"
       "kubernetes.io/ingress.class"                = "alb"
-      "alb.ingress.kubernetes.io/load-balancer-name: "${var.lb_project_name}"
+      "alb.ingress.kubernetes.io/load-balancer-name" = "${var.lb_project_name}"
     }
   }
 
