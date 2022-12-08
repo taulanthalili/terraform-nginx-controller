@@ -39,6 +39,6 @@ resource "kubernetes_ingress_v1" "alb_ingress" {
   ]
 }
 
-output  "alb_ingress_dns" {
-    kubernetes_ingress_v1.alb_ingress.status.0.load_balancer.0.ingress.0.hostname
+output "alb_ingress_dns" {
+    value = kubernetes_ingress_v1.alb_ingress.status.0.load_balancer.0.ingress.0.hostname
 }
