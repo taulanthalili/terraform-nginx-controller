@@ -11,6 +11,9 @@ variable "lb_project_name" {
   type = string
 }
 
+variable "certificate_arn" {
+  
+}
 # variable "labels" {
 #   type = object({
 #     environment = string
