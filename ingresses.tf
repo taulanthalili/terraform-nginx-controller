@@ -1,4 +1,5 @@
 resource "kubernetes_ingress_v1" "alb_ingress" {
+  wait_for_load_balancer = true
   metadata {
     name      = "alb-ingress-connect-nginx"
     namespace = "kube-system"
