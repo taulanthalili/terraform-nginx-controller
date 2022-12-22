@@ -39,6 +39,16 @@ resource "kubernetes_ingress_v1" "alb_ingress" {
   ]
 }
 
+resource "time_sleep" "wait_60_seconds" {
+  depends_on = [kubernetes_ingress_v1.alb_ingress]
+
+  create_duration = "60s"
+}
+
+# This output will create (at least) 60 seconds after kubernetes_ingress_v1.alb_ingress
+
 output "alb_ingress_dns" {
     value = kubernetes_ingress_v1.alb_ingress.status.0.load_balancer.0.ingress.0.hostname
+    depends_on = [time_sleep.wait_60_seconds]
+    ##Make sure that AWS ALB resource is up & running
 }
